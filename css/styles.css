@@ -1,0 +1,813 @@
+/* ==========================================
+   Google Font
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   Reset
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    #3d1a89 0%,
+    #5b3cc4 35%,
+    #4b67ff 70%,
+    #2c82ff 100%);
+
+}
+
+/* ==========================================
+   Background Glow
+========================================== */
+
+.background-blur{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    z-index:-1;
+
+}
+
+.blur1{
+
+    width:450px;
+    height:450px;
+
+    background:#8a4dff;
+
+    top:-180px;
+    left:-120px;
+
+    opacity:.45;
+
+}
+
+.blur2{
+
+    width:500px;
+    height:500px;
+
+    background:#4dd0ff;
+
+    bottom:-200px;
+    right:-150px;
+
+    opacity:.35;
+
+}
+
+/* ==========================================
+   Container
+========================================== */
+
+.container{
+
+    width:min(1250px,92%);
+
+    margin:auto;
+
+    padding:40px 0 60px;
+
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+header h1{
+
+    font-size:3.2rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+header h1 i{
+
+    color:#FFD54F;
+
+    margin-right:10px;
+
+}
+
+header p{
+
+    margin-top:12px;
+
+    color:#e6e8ff;
+
+    font-size:1.05rem;
+
+}
+
+/* ==========================================
+   Search Bar
+========================================== */
+
+.search-bar{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:40px;
+
+}
+
+.search-bar input{
+
+    width:450px;
+
+    max-width:100%;
+
+    padding:18px 22px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:60px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    color:white;
+
+    font-size:1rem;
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+.search-bar input::placeholder{
+
+    color:#d8dcff;
+
+}
+
+.search-bar button{
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+    135deg,
+    #7b5cff,
+    #ff4dd2);
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    transition:.35s;
+
+}
+
+.search-bar button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 12px 25px rgba(255,77,210,.35);
+
+}
+/* ==========================================
+   Dashboard Layout
+========================================== */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:30px;
+
+    align-items:start;
+
+    margin-bottom:45px;
+
+}
+
+/* ==========================================
+   Glass Card
+========================================== */
+
+.glass-card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:28px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.25);
+
+    transition:all .35s ease;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 25px 55px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   Left Panel
+========================================== */
+
+.left-panel{
+
+    width:100%;
+
+}
+
+.current-weather{
+
+    padding:35px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.current-weather::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-70px;
+
+    right:-70px;
+
+}
+
+.current-weather::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    bottom:-60px;
+
+    left:-60px;
+
+}
+
+.current-weather h2{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.current-weather p{
+
+    color:#dfe3ff;
+
+    font-size:.95rem;
+
+}
+
+.current-weather img{
+
+    width:180px;
+
+    height:180px;
+
+    margin:20px auto;
+
+    display:block;
+
+    filter:
+    drop-shadow(0 15px 25px rgba(0,0,0,.25));
+
+    animation:floatIcon 4s ease-in-out infinite;
+
+}
+
+.current-weather h1{
+
+    font-size:5rem;
+
+    font-weight:800;
+
+    line-height:1;
+
+    margin-bottom:10px;
+
+}
+
+.current-weather #description{
+
+    font-size:1.25rem;
+
+    text-transform:capitalize;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   Right Panel
+========================================== */
+
+.right-panel{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   Weather Details Grid
+========================================== */
+
+.details-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+.detail{
+
+    padding:30px;
+
+    min-height:180px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+.detail i{
+
+    font-size:38px;
+
+    margin-bottom:18px;
+
+}
+
+.detail:nth-child(1) i{
+
+    color:#66d9ff;
+
+}
+
+.detail:nth-child(2) i{
+
+    color:#8fe7ff;
+
+}
+
+.detail:nth-child(3) i{
+
+    color:#ffb366;
+
+}
+
+.detail:nth-child(4) i{
+
+    color:#b8c6ff;
+
+}
+
+.detail span{
+
+    font-size:1rem;
+
+    color:#d9dcff;
+
+    margin-bottom:8px;
+
+}
+
+.detail h3{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   Floating Animation
+========================================== */
+
+@keyframes floatIcon{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+/* ==========================================
+   Forecast Section
+========================================== */
+
+.forecast-section{
+
+    margin-top:40px;
+
+}
+
+.forecast-section h2{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+.forecast-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+
+    gap:20px;
+
+}
+
+.forecast-card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.forecast-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.15);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.forecast-card h3{
+
+    font-size:1.1rem;
+
+    margin-bottom:12px;
+
+}
+
+.forecast-card img{
+
+    width:80px;
+
+    height:80px;
+
+    margin:12px auto;
+
+    display:block;
+
+}
+
+.forecast-card h2{
+
+    font-size:2rem;
+
+    margin:10px 0;
+
+}
+
+.forecast-card p{
+
+    color:#dfe3ff;
+
+    font-size:.95rem;
+
+    text-transform:capitalize;
+
+}
+
+.forecast-card small{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#9fd7ff;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   Loader
+========================================== */
+
+.loader{
+
+    display:none;
+
+    text-align:center;
+
+    margin:40px 0;
+
+}
+
+.loader i{
+
+    font-size:45px;
+
+    color:#FFD54F;
+
+    margin-bottom:15px;
+
+}
+
+.loader p{
+
+    font-size:1rem;
+
+}
+
+/* ==========================================
+   Error Box
+========================================== */
+
+.error{
+
+    display:none;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    background:rgba(255,0,70,.15);
+
+    border:1px solid rgba(255,0,70,.25);
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:1000px){
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.details-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:2.4rem;
+
+}
+
+.search-bar{
+
+flex-direction:column;
+
+}
+
+.search-bar input{
+
+width:100%;
+
+}
+
+.search-bar button{
+
+width:100%;
+
+}
+
+.details-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.forecast-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.current-weather h1{
+
+font-size:4rem;
+
+}
+
+.current-weather img{
+
+width:140px;
+
+height:140px;
+
+}
+
+}
+
+@media(max-width:520px){
+
+.container{
+
+width:94%;
+
+}
+
+header h1{
+
+font-size:2rem;
+
+}
+
+.forecast-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.current-weather{
+
+padding:25px;
+
+}
+
+.current-weather h1{
+
+font-size:3.5rem;
+
+}
+
+.detail{
+
+padding:22px;
+
+}
+
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#28175d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(#7b5cff,#4dd0ff);
+
+border-radius:20px;
+
+}
+
+/* ==========================================
+   Selection
+========================================== */
+
+::selection{
+
+background:#7b5cff;
+
+color:white;
+
+}
