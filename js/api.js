@@ -2,7 +2,7 @@
 // OpenWeather API Configuration
 // =======================================
 
-const API_KEY = "YOUR_NEW_API_KEY";
+const API_KEY = "f501e280edaddf51cb2fbbdad822adc0";
 
 const GEO_URL =
     "https://api.openweathermap.org/geo/1.0/direct";
