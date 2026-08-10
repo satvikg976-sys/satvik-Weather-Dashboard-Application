@@ -76,95 +76,77 @@
 
     <div id="error" class="error"></div>
 
-    <!-- Dashboard -->
+  <!-- Dashboard -->
 
-    <div id="weatherCard" class="dashboard">
+<div id="weatherCard" class="dashboard">
 
-        <!-- Left Side -->
+    <!-- Left Side -->
 
-        <div class="left-panel">
+    <div class="left-panel">
 
-            <div class="glass-card current-weather">
+        <div class="glass-card current-weather">
 
-                <h2 id="cityName">
+            <h2 id="cityName"></h2>
 
-                    Tirupati
+            <p id="todayDate"></p>
 
-                </h2>
+            <img
+                id="weatherIcon"
+                src=""
+                alt="Weather Icon"
+            >
 
-                <p id="todayDate">
+            <h1 id="temperature"></h1>
 
-                    Monday, July 20
-
-                </p>
-
-                <img
-                    id="weatherIcon"
-                    src=""
-                    alt="Weather Icon"
-                >
-
-                <h1 id="temperature">
-
-                    29°C
-
-                </h1>
-
-                <p id="description">
-
-                    Clear Sky
-
-                </p>
-
-            </div>
+            <p id="description"></p>
 
         </div>
 
-        <!-- Right Side -->
+    </div>
 
-        <div class="right-panel">
+    <!-- Right Side -->
 
-            <div class="details-grid">
+    <div class="right-panel">
 
-                <div class="glass-card detail">
+        <div class="details-grid">
 
-                    <i class="fa-solid fa-droplet"></i>
+            <div class="glass-card detail">
 
-                    <span>Humidity</span>
+                <i class="fa-solid fa-droplet"></i>
 
-                    <h3 id="humidity"></h3>
+                <span>Humidity</span>
 
-                </div>
+                <h3 id="humidity"></h3>
 
-                <div class="glass-card detail">
+            </div>
 
-                    <i class="fa-solid fa-wind"></i>
+            <div class="glass-card detail">
 
-                    <span>Wind</span>
+                <i class="fa-solid fa-wind"></i>
 
-                    <h3 id="wind"></h3>
+                <span>Wind</span>
 
-                </div>
+                <h3 id="wind"></h3>
 
-                <div class="glass-card detail">
+            </div>
 
-                    <i class="fa-solid fa-temperature-half"></i>
+            <div class="glass-card detail">
 
-                    <span>Feels Like</span>
+                <i class="fa-solid fa-temperature-half"></i>
 
-                    <h3 id="feelsLike"></h3>
+                <span>Feels Like</span>
 
-                </div>
+                <h3 id="feelsLike"></h3>
 
-                <div class="glass-card detail">
+            </div>
 
-                    <i class="fa-solid fa-eye"></i>
+            <div class="glass-card detail">
 
-                    <span>Visibility</span>
+                <i class="fa-solid fa-eye"></i>
 
-                    <h3 id="visibility"></h3>
+                <span>Visibility</span>
 
-                </div>
+                <h3 id="visibility"></h3>
 
             </div>
 
@@ -172,23 +154,20 @@
 
     </div>
 
-    <!-- Forecast -->
+</div>
 
-    <section class="forecast-section">
+<!-- Forecast -->
 
-        <h2>
+<section class="forecast-section">
 
-            5-Day Forecast
+    <h2>5-Day Forecast</h2>
 
-        </h2>
+    <div
+        id="forecast"
+        class="forecast-grid">
+    </div>
 
-        <div
-            id="forecast"
-            class="forecast-grid">
-
-        </div>
-
-    </section>
+</section>
 
 </div>
 
