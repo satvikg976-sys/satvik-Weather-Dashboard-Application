@@ -4,27 +4,34 @@
 
 const STORAGE_KEY = "weather_dashboard_last_city";
 
+
 // =======================================
 // Save Last Searched City
 // =======================================
 
 function saveLastCity(city) {
 
-    if (!city) return;
+    if (!city) {
+        return;
+    }
 
     try {
 
-        localStorage.setItem(STORAGE_KEY, city);
+        localStorage.setItem(
+            STORAGE_KEY,
+            city
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Unable to save city:",
+            error
+        );
 
     }
-
-    catch (error) {
-
-        console.error("Unable to save city:", error);
-
-    }
-
 }
+
 
 // =======================================
 // Get Last Searched City
@@ -34,21 +41,24 @@ function getLastCity() {
 
     try {
 
-        const city = localStorage.getItem(STORAGE_KEY);
+        const city =
+            localStorage.getItem(STORAGE_KEY);
 
-        return city ? city : "Tirupati";
+        // IMPORTANT:
+        // Do NOT use Tirupati as a default.
+        return city || "";
 
+    } catch (error) {
+
+        console.error(
+            "Unable to retrieve city:",
+            error
+        );
+
+        return "";
     }
-
-    catch (error) {
-
-        console.error("Unable to retrieve city:", error);
-
-        return "Tirupati";
-
-    }
-
 }
+
 
 // =======================================
 // Clear Saved City
@@ -58,17 +68,20 @@ function clearLastCity() {
 
     try {
 
-        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(
+            STORAGE_KEY
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Unable to clear city:",
+            error
+        );
 
     }
-
-    catch (error) {
-
-        console.error("Unable to clear saved city:", error);
-
-    }
-
 }
+
 
 // =======================================
 // Check Local Storage Support
@@ -78,23 +91,26 @@ function isStorageSupported() {
 
     try {
 
-        const test = "__storage_test__";
+        const testKey =
+            "__weather_storage_test__";
 
-        localStorage.setItem(test, test);
+        localStorage.setItem(
+            testKey,
+            testKey
+        );
 
-        localStorage.removeItem(test);
+        localStorage.removeItem(
+            testKey
+        );
 
         return true;
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         return false;
-
     }
-
 }
+
 
 // =======================================
 // Initialize Storage
@@ -102,6 +118,8 @@ function isStorageSupported() {
 
 if (!isStorageSupported()) {
 
-    console.warn("Local Storage is not supported in this browser.");
+    console.warn(
+        "Local Storage is not supported in this browser."
+    );
 
 }
