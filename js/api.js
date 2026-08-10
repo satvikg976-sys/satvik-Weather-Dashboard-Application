@@ -20,21 +20,37 @@ const FORECAST_URL =
 
 async function getCoordinates(city) {
 
-    const response = await fetch(
-        `${GEO_URL}?q=${encodeURIComponent(city)}&limit=5&appid=${API_KEY}`
-    );
+    const url =
+        `${GEO_URL}?q=${encodeURIComponent(city)}&limit=5&appid=${API_KEY}`;
+
+    console.log("Geocoding URL:", url);
+
+    const response = await fetch(url);
+
+    console.log("API Status:", response.status);
 
     if (!response.ok) {
-        throw new Error("Unable to connect to Weather Service.");
+
+        const errorData = await response.text();
+
+        console.error("OpenWeather Error:", errorData);
+
+        throw new Error(
+            `Weather Service Error: ${response.status}`
+        );
     }
 
     const data = await response.json();
 
+    console.log("Location Data:", data);
+
     if (!data || data.length === 0) {
-        throw new Error("Location not found. Please check the place name.");
+
+        throw new Error(
+            "Location not found. Please check the place name."
+        );
     }
 
-    // Get the first result returned by OpenWeather
     const place = data[0];
 
     return {
@@ -45,7 +61,6 @@ async function getCoordinates(city) {
         country: place.country || ""
     };
 }
-
 
 // =======================================
 // Current Weather
